@@ -1,10 +1,13 @@
 const express=require("express");
+const dotenv=require("dotenv");
 const mongoose=require("mongoose");
 const bodyParser = require("body-parser");
 
 
 const app=express();
 const PORT=8000;
+
+dotenv.config();
 
 //Mongoose connection
 mongoose.connect(
