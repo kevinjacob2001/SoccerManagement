@@ -12,6 +12,9 @@ mongoose.connect(
     console.log("Connected to DB")
 })
 
+//bodyparser
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
 
 app.get("/",(req,res)=>
 res.send("Hai there kevin")
