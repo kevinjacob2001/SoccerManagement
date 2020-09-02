@@ -25,5 +25,15 @@ router.get("/", async (req, res) => {
     }
 })
 
+router.get("/:id", async (req, res) => {
+    try {
+        const player = await Player.findById(req.params.id)
+        res.json(player)
+    }
+    catch (err) {
+        res.send("Error" + err);
+    }
+})
+
     
 module.exports=router;
