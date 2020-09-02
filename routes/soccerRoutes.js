@@ -45,4 +45,16 @@ router.put("/:id", async (req, res) => {
     }
 })  
 
+router.delete("/:id", async (req, res) => {
+    try {
+        const player = await Player.findById(req.params.id)
+        const a1=await player.remove();
+        res.json(a1);
+    }
+    catch (err) {
+        res.send("Error" + err);
+    }
+})
+
+
 module.exports=router;
