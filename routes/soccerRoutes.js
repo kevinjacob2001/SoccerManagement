@@ -15,5 +15,15 @@ let newPlayer=new Player(req.body);
     }
 })
 
+router.get("/", async (req, res) => {
+    try {
+        const players = await Player.find({})
+        res.json(players)
+    }
+    catch (err) {
+        res.send("Error" + err);
+    }
+})
 
+    
 module.exports=router;

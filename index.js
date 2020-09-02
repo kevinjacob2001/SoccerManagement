@@ -2,8 +2,7 @@ const express=require("express");
 const dotenv=require("dotenv");
 const mongoose=require("mongoose");
 const bodyParser = require("body-parser");
-
-
+const cors=require("cors");
 const app=express();
 const PORT=8000;
 
@@ -18,6 +17,9 @@ mongoose.connect(
 //bodyparser
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
+
+//CORS Setup
+app.use(cors())
 
 const playerRouter=require("./routes/soccerRoutes");
 app.use("/player",playerRouter)
