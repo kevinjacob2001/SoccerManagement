@@ -19,9 +19,9 @@ mongoose.connect(
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
-app.get("/",(req,res)=>
-res.send("Hai there kevin")
-)
+const playerRouter=require("./routes/soccerRoutes");
+app.use("/player",playerRouter)
+
 
 app.listen(PORT,()=>{
     console.log("Server started listening")

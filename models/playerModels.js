@@ -1,6 +1,6 @@
 const { mongo } = require("mongoose");
 
-const mangoose=require("mongoose");
+const mongoose=require("mongoose");
 
 const playerSchema=new mongoose.Schema({
 
@@ -20,4 +20,4 @@ const playerSchema=new mongoose.Schema({
 
 })
 
-module.exports=mongoose.model("",playerSchema);
+module.exports=mongoose.model("Player",playerSchema);
