@@ -37,7 +37,7 @@ router.get("/:id", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
     try {
-        const player = await Player.findOneAndUpdate({_id:req.params.id},req.body,{new:true})
+        const player = await Player.findOneAndUpdate(req.params.id,req.body,{new:true})
         res.json(player)
     }
     catch (err) {
