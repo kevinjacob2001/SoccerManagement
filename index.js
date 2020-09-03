@@ -22,7 +22,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 const playerRouter=require("./routes/soccerRoutes");
-app.use("/player",playerRouter)
+app.use("/players",playerRouter)
 
 
 app.listen(PORT,()=>{
